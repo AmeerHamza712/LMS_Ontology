@@ -1,0 +1,1011 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36/"
+     xml:base="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36/"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="https://schema.org/"
+     xmlns:schema1="http://schema.org/"
+     xmlns:untitled-ontology-36="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36">
+        <rdfs:comment>Enhanced LMS ontology with equivalent classes, inverse properties, disjoint classes, and property restrictions</rdfs:comment>
+        <rdfs:label>Learning Management System Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/communicateWith -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/communicateWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://schema.org/Person"/>
+        <rdfs:comment>Symmetric property representing bidirectional communication between people</rdfs:comment>
+        <rdfs:label>communicates with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/teaches -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/teaches">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#taughtBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+        <rdfs:range rdf:resource="http://schema.org/Course"/>
+        <rdfs:comment>Relates a teacher to the courses they teach</rdfs:comment>
+        <rdfs:label>teaches</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#accessedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#accessedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#accesses"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:comment>Inverse of accesses - content is accessed by student</rdfs:comment>
+        <rdfs:label>accessed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#accesses -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#accesses">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <rdfs:comment>Student accesses learning content</rdfs:comment>
+        <rdfs:label>accesses</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#assignmentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#assignmentOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasAssignment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+        <rdfs:range rdf:resource="http://schema.org/Course"/>
+        <rdfs:comment>Inverse of hasAssignment - assignment belongs to course</rdfs:comment>
+        <rdfs:label>assignment of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#earnedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#earnedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#earnsCertificate"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:range rdf:resource="http://schema.org/Certification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#earnsCertificate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#earnsCertificate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:range rdf:resource="http://schema.org/Certification"/>
+        <rdfs:comment>Student earns certification upon course completion</rdfs:comment>
+        <rdfs:label>earns certificate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#enrollsIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#enrollsIn">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasEnrolledStudent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:range rdf:resource="http://schema.org/Course"/>
+        <rdfs:comment>Student enrolls in a course</rdfs:comment>
+        <rdfs:label>enrolls in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#grades -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#grades">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+        <rdfs:comment>Teacher grades assignments</rdfs:comment>
+        <rdfs:label>grades</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasAssignment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasAssignment">
+        <rdfs:domain rdf:resource="http://schema.org/Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+        <rdfs:comment>Course has assignments</rdfs:comment>
+        <rdfs:label>has assignment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasEnrolledStudent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasEnrolledStudent">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasEnrollment"/>
+        <rdfs:domain rdf:resource="http://schema.org/Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:comment>Inverse of enrollsIn - course has enrolled students</rdfs:comment>
+        <rdfs:label>has enrolled student</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasEnrollment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasEnrollment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Enrollment"/>
+        <rdfs:comment>Student has enrollment records</rdfs:comment>
+        <rdfs:label>has enrollment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasGrade -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasGrade">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#isGradeOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Grade"/>
+        <rdfs:comment>Assignment has a grade</rdfs:comment>
+        <rdfs:label>has grade</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasMaterial -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#hasMaterial">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#materialOf"/>
+        <rdfs:domain rdf:resource="http://schema.org/Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <rdfs:comment>Course has learning materials</rdfs:comment>
+        <rdfs:label>has material</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#isGradeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#isGradeOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:range rdf:resource="http://schema.org/Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#materialOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#materialOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <rdfs:range rdf:resource="http://schema.org/Course"/>
+        <rdfs:comment>Inverse of hasMaterial - content is material of course</rdfs:comment>
+        <rdfs:label>material of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#submits -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#submits">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#submittedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+        <rdfs:comment>Student submits assignment</rdfs:comment>
+        <rdfs:label>submits</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#submittedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#submittedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:comment>Inverse of submits - assignment is submitted by student</rdfs:comment>
+        <rdfs:label>submitted by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#taughtBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#taughtBy">
+        <rdfs:domain rdf:resource="http://schema.org/Course"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+        <rdfs:comment>Inverse of teaches - relates a course to its teacher</rdfs:comment>
+        <rdfs:label>taught by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/courseCode -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/courseCode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.org/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Unique identifier for the course</rdfs:comment>
+        <rdfs:label>course code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/courseWorkload -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/courseWorkload">
+        <rdfs:domain rdf:resource="http://schema.org/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Expected workload for the course</rdfs:comment>
+        <rdfs:label>course workload</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/dateCreated -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/dateCreated">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/Course"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Quiz"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Date when the resource was created</rdfs:comment>
+        <rdfs:label>date created</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/description -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/description">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/Course"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Textual description of the resource</rdfs:comment>
+        <rdfs:label>description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/email -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/email">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Email address of the person</rdfs:comment>
+        <rdfs:label>email</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/endDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/endDate">
+        <rdfs:domain rdf:resource="http://schema.org/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>End date of the event or period</rdfs:comment>
+        <rdfs:label>end date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/givenName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/givenName">
+        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>First name of the person</rdfs:comment>
+        <rdfs:label>given name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/identifier">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#studentID"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#teacherID"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Instructor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Unique identifier for the resource</rdfs:comment>
+        <rdfs:label>identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/name -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/name">
+        <rdfs:domain rdf:resource="http://schema.org/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Name of the resource</rdfs:comment>
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/startDate -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/startDate">
+        <rdfs:domain rdf:resource="http://schema.org/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Start date of the event or period</rdfs:comment>
+        <rdfs:label>start date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#completionPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#completionPercentage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Percentage of course completion (0-100)</rdfs:comment>
+        <rdfs:label>completion percentage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#credits -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#credits">
+        <rdfs:domain rdf:resource="http://schema.org/Course"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Number of credits awarded for course completion</rdfs:comment>
+        <rdfs:label>credits</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#dueDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#dueDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Deadline for assignment submission</rdfs:comment>
+        <rdfs:label>due date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#duration">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Duration of content in minutes</rdfs:comment>
+        <rdfs:label>duration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#enrollmentDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#enrollmentDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Enrollment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Date when student enrolled in course</rdfs:comment>
+        <rdfs:label>enrollment date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#gradeValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#gradeValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Grade"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Numerical grade value</rdfs:comment>
+        <rdfs:label>grade value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#maxScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#maxScore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assessment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Maximum achievable score for assessment</rdfs:comment>
+        <rdfs:label>maximum score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#studentID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#studentID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Unique student identification number</rdfs:comment>
+        <rdfs:label>student ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#teacherID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#teacherID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Unique teacher identification number</rdfs:comment>
+        <rdfs:label>teacher ID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/Certification -->
+
+    <owl:Class rdf:about="http://schema.org/Certification">
+        <rdfs:comment>A certificate awarded upon course completion</rdfs:comment>
+        <rdfs:label>Certification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Course -->
+
+    <owl:Class rdf:about="http://schema.org/Course">
+        <rdfs:comment>An educational course in the learning management system</rdfs:comment>
+        <rdfs:label>Course</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="http://schema.org/Person">
+        <rdfs:comment>A person in the system</rdfs:comment>
+        <rdfs:label>Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#ActiveEnrollment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#ActiveEnrollment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Enrollment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#CompletedEnrollment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#DroppedEnrollement"/>
+        <rdfs:comment>Student is currently enrolled and actively participating in the course</rdfs:comment>
+        <rdfs:label>Active Enrollment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Admin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Admin">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+        <rdfs:comment>System administrator with management privileges</rdfs:comment>
+        <rdfs:label>Administrator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assessment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assessment">
+        <rdfs:comment>Any form of evaluation or testing in a course</rdfs:comment>
+        <rdfs:label>Assessment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assessment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#submittedBy"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#dueDate"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Exam"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Quiz"/>
+        <rdfs:comment>A task assigned to students that must be submitted by a due date</rdfs:comment>
+        <rdfs:label>Assignment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#AudioLecture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#AudioLecture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Document"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#VideoLesson"/>
+        <rdfs:comment>Audio-only educational content</rdfs:comment>
+        <rdfs:label>Audio Lecture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#CompleteCertificate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#CompleteCertificate">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Certification"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#MeritCertificate"/>
+        <rdfs:comment>Certificate awarded for completing a course</rdfs:comment>
+        <rdfs:label>Completion Certificate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#CompletedEnrollment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#CompletedEnrollment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Enrollment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#completionPercentage"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#DroppedEnrollement"/>
+        <rdfs:comment>Student has successfully completed the course (100% completion)</rdfs:comment>
+        <rdfs:label>Completed Enrollment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content">
+        <rdfs:comment>Educational content or learning material</rdfs:comment>
+        <rdfs:label>Content</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Document -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Document">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Lecture"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Presentation"/>
+        <rdfs:comment>Text-based learning material (PDF, Word, etc.)</rdfs:comment>
+        <rdfs:label>Document</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#DroppedEnrollement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#DroppedEnrollement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Enrollment"/>
+        <rdfs:comment>Student has withdrawn from the course</rdfs:comment>
+        <rdfs:label>Dropped Enrollment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Enrollment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Enrollment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#enrollmentDate"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Represents a student&apos;s enrollment in a course</rdfs:comment>
+        <rdfs:label>Enrollment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Exam -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Exam">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assessment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#duration"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Quiz"/>
+        <rdfs:comment>Formal examination, typically more comprehensive than a quiz</rdfs:comment>
+        <rdfs:label>Exam</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Fail -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Fail">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Grade"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Pass"/>
+        <rdfs:comment>Failing grade - student did not meet minimum requirements</rdfs:comment>
+        <rdfs:label>Fail</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Grade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Grade">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#gradeValue"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Assessment result or score</rdfs:comment>
+        <rdfs:label>Grade</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Instructor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Instructor">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#InstructorLedCourse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#InstructorLedCourse">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Course"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#taughtBy"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#SelfPacedCourse"/>
+        <rdfs:comment>Course with active teacher instruction and guidance</rdfs:comment>
+        <rdfs:label>Instructor-Led Course</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Lecture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Lecture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Presentation"/>
+        <rdfs:comment>Educational lecture content</rdfs:comment>
+        <rdfs:label>Lecture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#MeritCertificate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#MeritCertificate">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Certification"/>
+        <rdfs:comment>Certificate awarded for exceptional performance</rdfs:comment>
+        <rdfs:label>Merit Certificate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#OnlineCourse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#OnlineCourse">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Course"/>
+        <rdfs:comment>Course delivered entirely through online platform</rdfs:comment>
+        <rdfs:label>Online Course</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Pass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Pass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Grade"/>
+        <rdfs:comment>Passing grade - student met minimum requirements</rdfs:comment>
+        <rdfs:label>Pass</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Presentation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Presentation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <rdfs:comment>Slide-based presentation material</rdfs:comment>
+        <rdfs:label>Presentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Quiz -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Quiz">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assessment"/>
+        <rdfs:comment>Short assessment to test knowledge</rdfs:comment>
+        <rdfs:label>Quiz</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#SelfPacedCourse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#SelfPacedCourse">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Course"/>
+        <rdfs:comment>Course where students learn at their own pace without instructor schedule</rdfs:comment>
+        <rdfs:label>Self-Paced Course</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#enrollsIn"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#studentID"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+        <rdfs:comment>Person enrolled in one or more courses for learning</rdfs:comment>
+        <rdfs:label>Student</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://schema.org/teaches"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#teacherID"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Person who instructs one or more courses</rdfs:comment>
+        <rdfs:label>Teacher</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#VideoLesson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#VideoLesson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Content"/>
+        <rdfs:comment>Video-based educational content</rdfs:comment>
+        <rdfs:label>Video Lesson</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+        <schema1:description>Make Cv in MsWord and Submit</schema1:description>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Document1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Document1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Document"/>
+        <untitled-ontology-36:hasMaterial rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Document1"/>
+        <untitled-ontology-36:dueDate>20_March_2026</untitled-ontology-36:dueDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Dr_Smith -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Dr_Smith">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+        <schema1:courseCode>Online_303</schema1:courseCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Online_Cours1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Online_Cours1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#OnlineCourse"/>
+        <schema1:courseCode>Online-101</schema1:courseCode>
+        <schema1:startDate>16-May-2026</schema1:startDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Online_Course2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Online_Course2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#OnlineCourse"/>
+        <schema1:startDate>16-May-2026</schema1:startDate>
+        <untitled-ontology-36:duration>2-Month</untitled-ontology-36:duration>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Python_Course -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Python_Course">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#VideoLesson"/>
+        <untitled-ontology-36:accesses rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Python_Course"/>
+        <untitled-ontology-36:credits>2_Hours</untitled-ontology-36:credits>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Self_Course1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Self_Course1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#SelfPacedCourse"/>
+        <untitled-ontology-36:credits>2_Hours</untitled-ontology-36:credits>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Self_Course2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Self_Course2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#SelfPacedCourse"/>
+        <untitled-ontology-36:credits>3_Hours</untitled-ontology-36:credits>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <untitled-ontology-36:enrollsIn rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Online_Cours1"/>
+        <untitled-ontology-36:hasAssignment rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Assignment1"/>
+        <untitled-ontology-36:hasMaterial rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Python_Course"/>
+        <schema1:name>Ali</schema1:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Student"/>
+        <untitled-ontology-36:enrollsIn rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Online_Course2"/>
+        <schema1:name>Hamza</schema1:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Tanveer_Khan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Tanveer_Khan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#Teacher"/>
+        <schema1:courseCode>Online_302</schema1:courseCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#WebDevelopment_Course -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#WebDevelopment_Course">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#VideoLesson"/>
+        <untitled-ontology-36:hasMaterial rdf:resource="http://www.semanticweb.org/mc/ontologies/2026/3/untitled-ontology-36#WebDevelopment_Course"/>
+        <untitled-ontology-36:duration>2_Month</untitled-ontology-36:duration>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
